@@ -23,10 +23,12 @@ public class Solution {
             answer.add(new ArrayList<>(currList));
         }
         for (int i = start; i < nums.length; i++) {
-            if (currList.size() == 0 || currList.get(currList.size() - 1) <= nums[i]) {
+            if (currList.isEmpty() || currList.get(currList.size() - 1) <= nums[i]) {
                 currList.add(nums[i]);
                 backtracking(nums, i + 1, currList, answer);
-                currList.remove(currList.size() - 1);
+                if (!currList.isEmpty()) {
+                    currList.remove(currList.size() - 1);
+                }
             }
         }
         return answer;

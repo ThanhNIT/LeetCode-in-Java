@@ -17,8 +17,7 @@ public class Solution {
         for (char c : hand.toCharArray()) {
             handList.add(c);
         }
-        int res = findMinStep(boardList, handList);
-        return res;
+        return findMinStep(boardList, handList);
     }
 
     private int findMinStep(List<Character> boardList, List<Character> handList) {
@@ -36,7 +35,7 @@ public class Solution {
             Set<Character> duplicate = new HashSet<>();
             for (int handListIndex = 0; handListIndex < handList.size(); handListIndex++) {
                 if (boardListIndex > 0
-                        && boardList.get(boardListIndex - 1) == handList.get(handListIndex)) {
+                        && boardList.get(boardListIndex - 1).equals(handList.get(handListIndex))) {
                     continue;
                 }
                 if (duplicate.contains(handList.get(handListIndex))) {
@@ -46,14 +45,18 @@ public class Solution {
                 }
                 boolean goodCase1 =
                         (boardListIndex < boardList.size()
-                                && boardList.get(boardListIndex) == handList.get(handListIndex));
+                                && boardList
+                                        .get(boardListIndex)
+                                        .equals(handList.get(handListIndex)));
                 boolean goodCase2 =
                         (boardListIndex > 0
                                 && boardListIndex < boardList.size()
-                                && boardList.get(boardListIndex - 1)
-                                        == boardList.get(boardListIndex)
-                                && boardList.get(boardListIndex - 1)
-                                        != handList.get(handListIndex));
+                                && boardList
+                                        .get(boardListIndex - 1)
+                                        .equals(boardList.get(boardListIndex))
+                                && !boardList
+                                        .get(boardListIndex - 1)
+                                        .equals(handList.get(handListIndex)));
                 if (!goodCase1 && !goodCase2) {
                     continue;
                 }
@@ -82,7 +85,7 @@ public class Solution {
             for (int i = 0; i < boardList.size() - 2; i++) {
                 int repeatLen = 1;
                 for (int j = i + 1; j < boardList.size(); j++) {
-                    if (boardList.get(j) == boardList.get(j - 1)) {
+                    if (boardList.get(j).equals(boardList.get(j - 1))) {
                         repeatLen++;
                     } else {
                         break;
@@ -99,8 +102,16 @@ public class Solution {
     }
 
     public boolean isValid(List<Character> boardList, List<Character> handList) {
-        int boardR = 0, boardY = 0, boardB = 0, boardG = 0, boardW = 0;
-        int handR = 0, handY = 0, handB = 0, handG = 0, handW = 0;
+        int boardR = 0;
+        int boardY = 0;
+        int boardB = 0;
+        int boardG = 0;
+        int boardW = 0;
+        int handR = 0;
+        int handY = 0;
+        int handB = 0;
+        int handG = 0;
+        int handW = 0;
         for (char c : boardList) {
             if (c == 'R') {
                 boardR++;
