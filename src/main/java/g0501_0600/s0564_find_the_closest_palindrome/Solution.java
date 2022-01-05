@@ -8,7 +8,7 @@ public class Solution {
             return String.valueOf(Integer.parseInt(n) - 1);
         }
         long num = Long.parseLong(n);
-        int offset = (int) Math.pow(10, n.length() / 2);
+        int offset = (int) Math.pow(10, (double) (n.length() / 2));
         long first =
                 isPalindrome(n)
                         ? palindromeGenerator(num + offset, n.length())
@@ -28,20 +28,22 @@ public class Solution {
     }
 
     private long palindromeGenerator(long num, int length) {
-        if (num < 10) return 9;
+        if (num < 10) {
+            return 9;
+        }
 
         int numOfDigits = String.valueOf(num).length();
         if (numOfDigits > length) {
-            return ((long) Math.pow(10, numOfDigits - 1) + 1);
+            return ((long) Math.pow(10, (double) numOfDigits - 1) + 1);
         } else if (numOfDigits < length) {
             return ((long) Math.pow(10, numOfDigits) - 1);
         }
 
-        num = num - num % (long) Math.pow(10, numOfDigits / 2);
+        num = num - num % (long) Math.pow(10, (double) (numOfDigits / 2));
         long temp = num;
         for (int j = 0; j < numOfDigits / 2; j++) {
-            long digit = (long) Math.pow(10, numOfDigits - j - 1);
-            num += (int) ((temp / digit) * Math.pow(10, j));
+            long digit = (long) Math.pow(10, (double) numOfDigits - j - 1);
+            num += (int) ((double) (temp / digit) * Math.pow(10, j));
             temp = temp % digit;
         }
 
