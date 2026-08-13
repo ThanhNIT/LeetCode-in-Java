@@ -8,8 +8,9 @@ public class Solution {
         int n = nums.length;
         long min = 0;
         if ((n & 1) == 1) {
-            for (int i = 1; i < n; i += 2)
+            for (int i = 1; i < n; i += 2) {
                 min += Math.max(Math.max(nums[i - 1], nums[i + 1]) + 1 - nums[i], 0);
+            }
         } else {
             long[] starting = new long[] {0, 0};
             for (int i = 1; i < n - 1; i += 2) {

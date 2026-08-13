@@ -7,7 +7,9 @@ public class Solution {
     // Changed method name from sumOfSortableIntegers to sortableIntegers
     public int sortableIntegers(int[] nums) {
         int n = nums.length;
-        if (n == 0) return 0;
+        if (n == 0) {
+            return 0;
+        }
 
         int[] prefMax = new int[n];
         prefMax[0] = nums[0];
