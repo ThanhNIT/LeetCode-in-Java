@@ -29,6 +29,9 @@ public class Solution {
 
         for (int i = 1; i < d.length; i++) {
             dp = transition(dp, g[d[i - 1]], g[d[i]]);
+            if (dp.length == 0) {
+                return 0;
+            }
         }
 
         return sum(dp);
