@@ -10,31 +10,26 @@ public class Solution {
         if (n == 0) {
             return 0;
         }
-
         int[] prefMax = new int[n];
         prefMax[0] = nums[0];
         for (int i = 1; i < n; i++) {
             prefMax[i] = Math.max(prefMax[i - 1], nums[i]);
         }
-
         int[] suffMin = new int[n];
         suffMin[n - 1] = nums[n - 1];
         for (int i = n - 2; i >= 0; i--) {
             suffMin[i] = Math.min(suffMin[i + 1], nums[i]);
         }
-
         int[] prefDrops = new int[n];
         for (int i = 1; i < n; i++) {
             prefDrops[i] = prefDrops[i - 1] + (nums[i - 1] > nums[i] ? 1 : 0);
         }
-
         int sumOfK = 0;
         for (int k = 1; k <= n; k++) {
             if (n % k == 0 && (isSortable(k, n, nums, prefMax, suffMin, prefDrops))) {
                 sumOfK += k;
             }
         }
-
         return sumOfK;
     }
 
@@ -45,7 +40,6 @@ public class Solution {
                 return false;
             }
         }
-
         for (int start = 0; start < n; start += k) {
             int end = start + k - 1;
             int internalDrops = prefDrops[end] - prefDrops[start];
@@ -54,7 +48,6 @@ public class Solution {
                 return false;
             }
         }
-
         return true;
     }
 }
