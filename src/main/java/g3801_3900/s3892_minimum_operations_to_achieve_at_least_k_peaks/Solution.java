@@ -22,7 +22,6 @@ public class Solution {
             int right = nums[(i + 1) % n];
             c[i] = Math.max(0L, (long) Math.max(left, right) + 1 - nums[i]);
         }
-
         long best = pathMin(c, 1, n - 1, k);
         long withZero = pathMin(c, 2, n - 2, k - 1);
         if (withZero < INF) {
