@@ -11,7 +11,6 @@ public class Solution {
         if (parent[x] == x) {
             return x;
         }
-
         int p = parent[x];
         parent[x] = find(parent[x]);
         parity[x] ^= parity[p];
