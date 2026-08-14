@@ -16,7 +16,6 @@ public class Solution {
         if (k > n / 2) {
             return -1;
         }
-
         long[] c = new long[n];
         for (int i = 0; i < n; i++) {
             int left = nums[(i - 1 + n) % n];
