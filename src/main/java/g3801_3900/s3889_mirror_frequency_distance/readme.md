@@ -31,55 +31,12 @@ Return an integer denoting the total sum of these values over all such **distinc
 
 For every mirror pair:
 
-`c`
-
-`m`
-
-`freq(c)`
-
-`freq(m)`
-
-`|freq(c) - freq(m)|`
-
-a
-
-z
-
-1
-
-1
-
-0
-
-b
-
-y
-
-1
-
-0
-
-1
-
-1
-
-8
-
-1
-
-0
-
-1
-
-9
-
-0
-
-1
-
-0
-
-1
+| `c` | `m` | `freq(c)` | `freq(m)` | `\|freq(c) - freq(m)\|` |
+| --- | --- | --------: | --------: | ----------------------: |
+| a   | z   |         1 |         1 |                       0 |
+| b   | y   |         1 |         0 |                       1 |
+| 1   | 8   |         1 |         0 |                       1 |
+| 9   | 0   |         1 |         0 |                       1 |
 
 Thus, the answer is `0 + 1 + 1 + 1 = 3`.
 
@@ -91,45 +48,11 @@ Thus, the answer is `0 + 1 + 1 + 1 = 3`.
 
 **Explanation:**
 
-`c`
-
-`m`
-
-`freq(c)`
-
-`freq(m)`
-
-`|freq(c) - freq(m)|`
-
-4
-
-5
-
-1
-
-0
-
-1
-
-m
-
-n
-
-1
-
-1
-
-0
-
-7
-
-2
-
-1
-
-0
-
-1
+| `c` | `m` | `freq(c)` | `freq(m)` | `\|freq(c) - freq(m)\|` |
+| --- | --- | --------: | --------: | ----------------------: |
+| 4   | 5   |         1 |         0 |                       1 |
+| m   | n   |         1 |         1 |                       0 |
+| 7   | 2   |         1 |         0 |                       1 |
 
 Thus, the answer is `1 + 0 + 1 = 2`.
 
@@ -141,25 +64,9 @@ Thus, the answer is `1 + 0 + 1 = 2`.
 
 **Explanation:**
 
-`c`
-
-`m`
-
-`freq(c)`
-
-`freq(m)`
-
-`|freq(c) - freq(m)|`
-
-b
-
-y
-
-2
-
-2
-
-0
+| `c` | `m` | `freq(c)` | `freq(m)` | `\|freq(c) - freq(m)\|` |
+| --- | --- | --------: | --------: | ----------------------: |
+| b   | y   |         2 |         2 |                       0 |
 
 Thus, the answer is 0.
 

@@ -20,47 +20,14 @@ Here, the bitwise OR of two integers `a` and `b` is denoted by `a | b`.
 
 The subarrays of `nums` are:
 
-Subarray
-
-Bitwise OR
-
-Present in Subarray
-
-`[4]`
-
-`4 = 4`
-
-Yes
-
-`[2]`
-
-`2 = 2`
-
-Yes
-
-`[3]`
-
-`3 = 3`
-
-Yes
-
-`[4, 2]`
-
-`4 | 2 = 6`
-
-No
-
-`[2, 3]`
-
-`2 | 3 = 3`
-
-Yes
-
-`[4, 2, 3]`
-
-`4 | 2 | 3 = 7`
-
-No
+| Subarray    | Bitwise OR        | Present in Subarray |
+| ----------- | ----------------- | ------------------- |
+| `[4]`       | `4 = 4`           | Yes                 |
+| `[2]`       | `2 = 2`           | Yes                 |
+| `[3]`       | `3 = 3`           | Yes                 |
+| `[4, 2]`    | `4 \| 2 = 6`      | No                  |
+| `[2, 3]`    | `2 \| 3 = 3`      | Yes                 |
+| `[4, 2, 3]` | `4 \| 2 \| 3 = 7` | No                  |
 
 Thus, the good subarrays of `nums` are `[4]`, `[2]`, `[3]` and `[2, 3]`. Thus, the answer is 4.
 
